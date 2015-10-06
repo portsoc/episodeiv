@@ -1,0 +1,49 @@
+body {
+  background: black;
+  color: #ffd23e;
+  font-family: arial;
+  font-size: 300%;
+}
+
+article {
+  text-align: justify;
+  margin: auto;
+  width: 15em;
+}
+
+article>section>header {
+  text-align: center;
+}
+
+article>section strong {
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+body {
+    -webkit-perspective: 250;
+}
+
+article {
+    /* -webkit-transform: rotate3d(1, 0, 0, 30deg); */
+    -webkit-transform: rotate3d(1, 0, 0, 30deg) translate3d(0px, -30em,0px);
+    -webkit-animation: crawler 100s;
+    opacity: 0;
+}
+
+
+@-webkit-keyframes crawler {
+0%
+  {
+  -webkit-transform: rotate3d(1, 0, 0, 30deg) translate3d(0px, 21em,0px);
+  opacity: 1;
+  }
+50% {
+    opacity: 1;
+}
+100%
+  {
+  -webkit-transform: rotate3d(1, 0, 0, 30deg) translate3d(0px, -30em,0px);
+    opacity: 0;
+  }
+}

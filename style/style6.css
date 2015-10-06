@@ -1,0 +1,29 @@
+body {
+  background: black;
+  color: #ffd23e;
+  font-family: arial;
+  font-size: 300%;
+}
+
+article {
+  text-align: justify;
+  margin: auto;
+  width: 15em;
+}
+
+article>section>header {
+  text-align: center;
+}
+
+article>section strong {
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+body {
+    -webkit-perspective: 250;
+}
+
+article {
+  -webkit-transform: rotate3d(1, 0, 0, 30deg);
+}

@@ -1,0 +1,11 @@
+body {
+  background: black;
+  color: #ffd23e;
+  font-family: arial;
+}
+
+article {
+  text-align: justify;
+  margin: auto;
+  width: 15em;
+}
