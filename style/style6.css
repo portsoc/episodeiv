@@ -21,9 +21,16 @@ article>section strong {
 }
 
 body {
-    -webkit-perspective: 250;
+  -webkit-perspective: 50vh;
+  overflow: hidden;
+  height: 100vh;
 }
 
 article {
-  -webkit-transform: rotate3d(1, 0, 0, 30deg);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform-origin: center bottom;
+  -webkit-transform: rotate3d(1, 0, 0, 45deg);
 }

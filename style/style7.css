@@ -21,29 +21,35 @@ article>section strong {
 }
 
 body {
-    -webkit-perspective: 250;
+  -webkit-perspective: 50vh;
+  overflow: hidden;
+  height: 100vh;
 }
 
 article {
-    /* -webkit-transform: rotate3d(1, 0, 0, 30deg); */
-    -webkit-transform: rotate3d(1, 0, 0, 30deg) translate3d(0px, -30em,0px);
-    -webkit-animation: crawler 100s;
-    opacity: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform-origin: center bottom;
+  -webkit-transform: rotate3d(1, 0, 0, 45deg);
+  -webkit-animation: crawler 75s linear;
+  -webkit-animation-fill-mode: forwards;
 }
 
 
 @-webkit-keyframes crawler {
 0%
   {
-  -webkit-transform: rotate3d(1, 0, 0, 30deg) translate3d(0px, 21em,0px);
-  opacity: 1;
+    -webkit-transform:  rotate3d(1, 0, 0, 45deg) translateY(110%);
+    opacity: 1;
   }
-50% {
+90% {
     opacity: 1;
 }
 100%
   {
-  -webkit-transform: rotate3d(1, 0, 0, 30deg) translate3d(0px, -30em,0px);
+    -webkit-transform:  rotate3d(1, 0, 0, 45deg) translateY(-50%);
     opacity: 0;
   }
 }
