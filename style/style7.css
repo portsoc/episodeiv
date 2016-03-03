@@ -15,6 +15,10 @@ article>section>header {
   text-align: center;
 }
 
+article>section>header>h1 {
+  text-transform: uppercase;
+}
+
 article>section strong {
   text-transform: uppercase;
   font-weight: normal;
