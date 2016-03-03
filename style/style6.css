@@ -25,7 +25,7 @@ article>section strong {
 }
 
 body {
-  -webkit-perspective: 50vh;
+  perspective: 50vh;
   overflow: hidden;
   height: 100vh;
 }
@@ -35,6 +35,6 @@ article {
   left: 0;
   right: 0;
   bottom: 0;
-  -webkit-transform-origin: center bottom;
-  -webkit-transform: rotate3d(1, 0, 0, 45deg);
+  transform-origin: center bottom;
+  transform: rotate3d(1, 0, 0, 45deg);
 }
