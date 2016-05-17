@@ -2,13 +2,13 @@ body {
   background: black;
   color: #ffd23e;
   font-family: arial;
-  font-size: 300%;
 }
 
 article {
   text-align: justify;
   margin: auto;
   width: 15em;
+  font-size: 6.666vw;
 }
 
 article>section>header {

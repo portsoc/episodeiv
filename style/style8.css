@@ -28,6 +28,14 @@ body {
   perspective: 50vh;
   overflow: hidden;
   height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+article>section>header>p {
+  margin-top: 0;
 }
 
 article {
@@ -37,8 +45,28 @@ article {
   bottom: 0;
   transform-origin: center bottom;
   transform: rotate3d(1, 0, 0, 45deg);
-  animation: crawler 72s linear;
+  animation: crawler 80s linear;
   animation-fill-mode: forwards;
+}
+
+#logo {
+    animation: shrinker 9s linear;
+    opacity: 0;
+    height: 120vh;
+}
+
+@keyframes shrinker {
+    0% {
+        transform: translateZ(0);
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateZ(-500vh);
+        opacity: 0;
+    }
 }
 
 @keyframes crawler {
@@ -47,6 +75,12 @@ article {
     transform:  rotate3d(1, 0, 0, 45deg) translateY(100%);
     opacity: 1;
   }
+
+11%
+{
+  transform:  rotate3d(1, 0, 0, 45deg) translateY(100%);
+  opacity: 1;
+}
 
 90% {
     opacity: 1;
