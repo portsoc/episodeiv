@@ -55,18 +55,19 @@ article>section strong {
 0%
   {
       transform: rotate3d(0,0,1, 0deg);
-/*      font-size: 100%;*/
   }
-50%
+33%
   {
-      transform: rotate3d(0,0,1, 180deg);
-/*      font-size: 500%; */
+      transform: rotate3d(0,1,0, 120);
   }
-100%
+66%
   {
-      transform: rotate3d(0,0,1, 360deg);
-/*      font-size: 100%; */
+      transform: rotate3d(1,0,0, 240deg);
   }
+ 100%
+    {
+        transform: rotate3d(0,0,1, 360deg);
+    }
 }
 
 
@@ -93,4 +94,13 @@ article>section strong {
   {
   transform: rotate3d(-1,-1,1, 430deg);
   }
+}
+
+
+.paused {
+    background: green !important;
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
 }

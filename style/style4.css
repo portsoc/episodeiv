@@ -4,21 +4,29 @@ body {
   font-family: arial;
 }
 
+aside {
+    color: rgb(75,213,238);
+}
+
 article {
   text-align: justify;
   margin: auto;
   width: 15em;
 }
 
-article>section>header {
+img {
+    width: 5em;
+}
+
+header {
   text-align: center;
 }
 
-article>section>header>h1 {
+h1 {
   text-transform: uppercase;
 }
 
-article>section strong {
+strong {
   text-transform: uppercase;
   font-weight: normal;
 }

@@ -1,7 +1,23 @@
 body {
   background: black;
+  background: url(../stars.png);
+  background-size: 100vw;
   color: #ffd23e;
   font-family: arial;
+
+  perspective: 50vh;
+  overflow: hidden;
+  height: 100vh;
+}
+
+aside {
+    position: absolute;
+    opacity: 0;
+    color: rgb(75,213,238);
+    animation-delay; 2s;
+    animation: appear 6s linear;
+    font-size: 4vw;
+    margin: 40vh 20vw;
 }
 
 article {
@@ -11,31 +27,17 @@ article {
   font-size: 6.666vw;
 }
 
-article>section>header {
+header {
   text-align: center;
 }
 
-article>section>header>h1 {
+h1 {
   text-transform: uppercase;
 }
 
-article>section strong {
+strong {
   text-transform: uppercase;
   font-weight: normal;
-}
-
-body {
-  perspective: 50vh;
-  overflow: hidden;
-  height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-article>section>header>p {
-  margin-top: 0;
 }
 
 article {
@@ -45,18 +47,65 @@ article {
   bottom: 0;
   transform-origin: center bottom;
   transform: rotate3d(1, 0, 0, 45deg);
-  animation: crawler 80s linear;
+  animation: crawler 78s linear;
   animation-fill-mode: forwards;
+  animation-delay: 13s;
+  opacity: 0;
 }
 
-#logo {
+
+@keyframes crawler {
+0%
+  {
+    transform:  rotate3d(1, 0, 0, 45deg) translateY(100%);
+    opacity: 1;
+  }
+
+90% {
+    opacity: 1;
+}
+100%
+  {
+    transform:  rotate3d(1, 0, 0, 45deg) translateY(-50%);
+    opacity: 0;
+  }
+}
+
+
+
+img {
+    position: absolute;
     animation: shrinker 9s linear;
     opacity: 0;
-    height: 120vh;
+    height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    animation-delay: 6s;
 }
+
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 
 @keyframes shrinker {
     0% {
+        transform: translateZ(0);
+        opacity: 0;
+    }
+    1% {
         transform: translateZ(0);
         opacity: 1;
     }
@@ -69,25 +118,9 @@ article {
     }
 }
 
-@keyframes crawler {
-0%
-  {
-    transform:  rotate3d(1, 0, 0, 45deg) translateY(100%);
-    opacity: 1;
-  }
-
-11%
-{
-  transform:  rotate3d(1, 0, 0, 45deg) translateY(100%);
-  opacity: 1;
-}
-
-90% {
-    opacity: 1;
-}
-100%
-  {
-    transform:  rotate3d(1, 0, 0, 45deg) translateY(-50%);
-    opacity: 0;
-  }
+.paused {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
 }
