@@ -30,8 +30,8 @@ strong {
 
 body {
   perspective: 50vh;
-  overflow: hidden;
   height: 100vh;
+  overflow: hidden;
 }
 
 article {
