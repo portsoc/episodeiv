@@ -41,14 +41,14 @@ article {
   bottom: 0;
   transform-origin: center bottom;
   transform: rotate3d(1, 0, 0, 45deg);
-  animation: crawler 72s linear;
+  animation: crawler 7s linear infinite;
   animation-fill-mode: forwards;
 }
 
 @keyframes crawler {
 0%
   {
-    transform:  rotate3d(1, 0, 0, 45deg) translateY(100%);
+    transform: rotateX(45deg) translateY(100%);
     opacity: 1;
   }
 
@@ -57,15 +57,7 @@ article {
 }
 100%
   {
-    transform:  rotate3d(1, 0, 0, 45deg) translateY(-50%);
+    transform: rotateX(45deg) translateY(-50%);
     opacity: 0;
   }
-}
-
-
-.paused {
-    -webkit-animation-play-state: paused;
-    -moz-animation-play-state: paused;
-    -o-animation-play-state: paused;
-    animation-play-state: paused;
 }
