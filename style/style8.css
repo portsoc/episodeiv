@@ -51,15 +51,16 @@ article {
   transform: rotate3d(1, 0, 0, 45deg);
   animation: crawler 78s linear;
   animation-fill-mode: forwards;
-  animation-delay: 13s;
+  animation-delay: 11s;
   opacity: 0;
 }
+
 
 
 @keyframes crawler {
 0%
   {
-    transform:  rotate3d(1, 0, 0, 45deg) translateY(100%);
+    transform: rotateX(45deg) translateY(100%);
     opacity: 1;
   }
 
@@ -68,7 +69,7 @@ article {
 }
 100%
   {
-    transform:  rotate3d(1, 0, 0, 45deg) translateY(-50%);
+    transform: rotateX(45deg) translateY(-50%);
     opacity: 0;
   }
 }
