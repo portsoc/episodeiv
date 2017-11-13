@@ -8,13 +8,15 @@ body {
   perspective: 50vh;
   overflow: hidden;
   height: 100vh;
+
+  filter: blur(1px);
 }
 
 aside {
     position: absolute;
     opacity: 0;
     color: rgb(75,213,238);
-    animation-delay; 2s;
+    animation-delay: 2s;
     animation: appear 6s linear;
     font-size: 4vw;
     margin: 40vh 20vw;
@@ -116,11 +118,4 @@ img {
         transform: translateZ(-500vh);
         opacity: 0;
     }
-}
-
-.paused {
-    -webkit-animation-play-state: paused;
-    -moz-animation-play-state: paused;
-    -o-animation-play-state: paused;
-    animation-play-state: paused;
 }
