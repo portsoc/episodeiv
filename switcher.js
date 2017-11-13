@@ -1,52 +1,41 @@
-// use Alt+LeftArrow or Alt+RightArrow to move between stylesheets
-(function() {
-  "use strict";
-  let sheets = [
-          'style/style0.css',
-          'style/style1.css',
-          'style/style2.css',
-          'style/style3.css',
-          'style/style4.css',
-          'style/style5.css',
-          'style/style6.css',
-          'style/style7.css',
-          'style/style8.css',
-          'style/wrong.css'
-      ],
-      sheetid = sheets.length-2,
+// use Meta+Arrows to move between stylesheets
 
-      nudge = (direction) => {
-        sheetid += direction;
-        sheetid = Math.min(sheets.length-1,sheetid);
-        sheetid = Math.max(0,sheetid);
-      	sheet.setAttribute('href', `${sheets[sheetid]}`);
-      },
+"use strict";
+const sheets = [
+  'style/style0.css',
+  'style/style1.css',
+  'style/style2.css',
+  'style/style3.css',
+  'style/style4.css',
+  'style/style5.css',
+  'style/style6.css',
+  'style/style7.css',
+  'style/style8.css'
+];
 
-      handler = (event) => {
-          if (event.key=="ArrowDown" || event.key=="ArrowRight") {
-              nudge(+1);
-          }
-          if (event.key=="ArrowUp" || event.key=="ArrowLeft") {
-              nudge(-1);
-          }
-          if (event.key=="p") {
-            toggleAnimation();
-          }
-      },
+let sheetid = sheets.length - 2;
 
-      loaded = () => {
-          nudge(0);
-      },
+function nudge(direction) {
+  sheetid += direction;
+  sheetid = Math.min(sheets.length - 1, sheetid);
+  sheetid = Math.max(0, sheetid);
+  sheet.setAttribute('href', `${sheets[sheetid]}`);
+}
 
-      toggleAnimation = () => {
-        logo.classList.toggle("paused");
-        long.classList.toggle("paused");
-        crawl.classList.toggle("paused");
-        if (starwars) {
-          starwars.togglePause();
-        }
-      };
+function inputHandler(event) {
+  if (event.metaKey) {
+    if (event.key == "ArrowDown") {
+      nudge(+1);
+    }
+    if (event.key == "ArrowUp") {
+      nudge(-1);
+    }
+  }
+}
 
-    document.addEventListener("keydown", handler);
-    window.addEventListener("load", loaded);
-})();
+function loaded() {
+  nudge(window.location.hash ? sheets.length : -sheets.length);
+}
+
+document.addEventListener("keydown", inputHandler);
+window.addEventListener("load", loaded);
