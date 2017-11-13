@@ -16,20 +16,15 @@ const sheets = [
 let sheetid = sheets.length - 2;
 
 function nudge(direction) {
-  sheetid += direction;
-  sheetid = Math.min(sheets.length - 1, sheetid);
+  sheetid = Math.min(sheets.length - 1, sheetid + direction);
   sheetid = Math.max(0, sheetid);
   sheet.setAttribute('href', `${sheets[sheetid]}`);
 }
 
 function inputHandler(event) {
   if (event.metaKey) {
-    if (event.key == "ArrowDown") {
-      nudge(+1);
-    }
-    if (event.key == "ArrowUp") {
-      nudge(-1);
-    }
+    if (event.key == "ArrowDown") nudge(+1);
+    if (event.key == "ArrowUp") nudge(-1);
   }
 }
 
